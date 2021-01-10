@@ -5,7 +5,7 @@ describe("Heading", () => {
   it("creates headings of any type with content and optional attribtues", () => {
     const props = {
       level: 3,
-      text: "I'm of middle importance",
+      display: "I'm of middle importance",
       extraAttrs: { className: "special" },
     };
 
@@ -13,15 +13,15 @@ describe("Heading", () => {
 
     const {
       level,
-      text,
+      display,
       extraAttrs: { className },
     } = props;
-    const heading = screen.getByText(text);
+    const heading = screen.getByText(display);
     const tagName = heading.tagName;
 
     expect(heading).toBeInTheDocument();
     expect(tagName).toBe(`H${level}`);
-    expect(heading).toHaveTextContent(text);
+    expect(heading).toHaveTextContent(display);
     expect(heading).toHaveClass(className);
   });
 });

@@ -4,7 +4,7 @@ import { APP_NAME } from "../../constants/app";
 const Header = () => {
   return (
     <header>
-      <Heading level={1} text={APP_NAME} />
+      <Heading level={1} display={APP_NAME} />
     </header>
   );
 };
