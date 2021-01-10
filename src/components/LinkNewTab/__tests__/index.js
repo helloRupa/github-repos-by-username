@@ -1,10 +1,8 @@
-import React from "react";
-import "@testing-library/jest-dom";
 import { render, screen } from "@testing-library/react";
 import LinkNewTab from "../";
 
 describe("LinkNewTab", () => {
-  it("renders a link that opens in a new tab when clicked and allows for optional attributes", () => {
+  it("renders a link that opens in a new tab w/ extra attributes", () => {
     const props = {
       href: "http://www.cats.com",
       display: "Go to the cats",
