@@ -1,49 +1,46 @@
 import React from "react";
 import "@testing-library/jest-dom";
 import { render, fireEvent, screen, cleanup } from "@testing-library/react";
-import Button from "../index.js";
+import Button from "../";
 
 const renderButton = (props) => {
   render(<Button {...props} />);
+
   return screen.getByText(props.display);
 };
 
-describe("button", () => {
+describe("Button", () => {
   afterEach(cleanup);
 
-  it("renders a button with the given text and type and is enabled", () => {
+  it("renders a button with the given text and type, and calls the callback", () => {
     const props = {
       display: "Hello TDD!",
       type: "button",
+      onClick: jest.fn(),
     };
     const found = renderButton(props);
 
     expect(found).toBeInTheDocument();
     expect(found).toHaveAttribute("type", props.type);
-    expect(found).not.toHaveAttribute("disabled");
+
+    fireEvent.click(found);
+
+    expect(props.onClick).toHaveBeenCalledTimes(1);
   });
 
-  it("disables the button when disabled is true", () => {
+  it("optionally disables the button and adds extra attributes", () => {
     const props = {
       display: "Unclickable",
       type: "button",
       disabled: true,
+      extraAttrs: { "aria-label": "This is accessible" },
     };
     const found = renderButton(props);
+    const {
+      extraAttrs: { ariaLabel },
+    } = props;
 
     expect(found).toHaveAttribute("disabled", "");
-  });
-
-  it("calls the given callback", () => {
-    const propsWithCallback = {
-      display: "Click Me",
-      type: "button",
-      onClick: jest.fn(),
-    };
-    const foundWithCallback = renderButton(propsWithCallback);
-
-    fireEvent.click(foundWithCallback);
-
-    expect(propsWithCallback.onClick).toHaveBeenCalledTimes(1);
+    expect(found).toHaveAttribute("aria-label", ariaLabel);
   });
 });

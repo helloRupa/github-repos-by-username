@@ -19,9 +19,6 @@ const REPO_FRAGMENT = gql`
       forkCount
       url
       updatedAt
-      watchers {
-        totalCount
-      }
       stargazerCount
     }
     pageInfo {
