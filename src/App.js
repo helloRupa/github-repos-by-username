@@ -1,12 +1,11 @@
-import { ApolloProvider } from "@apollo/client";
-import CLIENT from "./apollo";
 import "./App.css";
+import Header from "./domain/Header";
 
 function App() {
   return (
-    <ApolloProvider client={CLIENT}>
-      <div className="App"></div>
-    </ApolloProvider>
+    <>
+      <Header />
+    </>
   );
 }
 
