@@ -1,38 +1,99 @@
 import { gql } from "@apollo/client";
 
-export const GET_USER_REPOS = gql`
-  query getUserRepos($username: String!, $endCursor: String) {
-    repositoryOwner(login: $username) {
-      login
-      ... on User {
-        url
+const REPO_OWNER_FRAGMENT = gql`
+  fragment OwnerFields on User {
+    login
+    ... on User {
+      url
+    }
+  }
+`;
+
+const REPO_FRAGMENT = gql`
+  fragment RepoFields on RepositoryConnection {
+    totalCount
+    nodes {
+      name
+      createdAt
+      description
+      forkCount
+      url
+      updatedAt
+      watchers {
+        totalCount
       }
+      stargazerCount
+    }
+    pageInfo {
+      endCursor
+      hasNextPage
+    }
+  }
+`;
+
+export const GET_USER_REPOS = gql`
+  query getUserRepos($username: String!) {
+    repositoryOwner(login: $username) {
+      ...OwnerFields
+      repositories(orderBy: { field: UPDATED_AT, direction: DESC }, first: 10) {
+        ...RepoFields
+      }
+    }
+  }
+  ${REPO_OWNER_FRAGMENT}
+  ${REPO_FRAGMENT}
+`;
+
+export const GET_MORE_REPOS = gql`
+  query getMoreRepos($username: String!, $endCursor: String!) {
+    repositoryOwner(login: $username) {
+      ...OwnerFields
       repositories(
         orderBy: { field: UPDATED_AT, direction: DESC }
         first: 10
         after: $endCursor
       ) {
-        totalCount
-        nodes {
-          name
-          createdAt
-          description
-          forkCount
-          url
-          updatedAt
-          watchers {
-            totalCount
-          }
-          stargazerCount
-        }
-        pageInfo {
-          endCursor
-          hasNextPage
-        }
+        ...RepoFields
       }
     }
   }
+  ${REPO_OWNER_FRAGMENT}
+  ${REPO_FRAGMENT}
 `;
+
+// export const GET_USER_REPOS = gql`
+//   query getUserRepos($username: String!, $endCursor: String) {
+//     repositoryOwner(login: $username) {
+//       login
+//       ... on User {
+//         url
+//       }
+//       repositories(
+//         orderBy: { field: UPDATED_AT, direction: DESC }
+//         first: 10
+//         after: $endCursor
+//       ) {
+//         totalCount
+//         nodes {
+//           name
+//           createdAt
+//           description
+//           forkCount
+//           url
+//           updatedAt
+//           watchers {
+//             totalCount
+//           }
+//           stargazerCount
+//         }
+//         pageInfo {
+//           endCursor
+//           hasNextPage
+//         }
+//       }
+//     }
+//   }
+// `;
 
 // EXAMPLE RESPONSES
 /*
