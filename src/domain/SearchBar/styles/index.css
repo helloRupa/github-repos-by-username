@@ -31,24 +31,24 @@ input[type="submit"] {
 .search-form button {
   padding: 10px;
   text-align: center;
-  color: #f6f8fa;
+  color: var(--button-text-color);
   transition: background-color ease 1s;
 }
 
 .search-form input[type="submit"] {
-  background-color: #0366d6;
+  background-color: var(--submit-text-color);
 }
 
 .search-form input[type="submit"]:hover {
-  background-color: #54228a;
+  background-color: var(--submit-bg-color);
 }
 
 .search-form button {
-  background-color: #ea852e;
+  background-color: var(--button-bg-color);
 }
 
 .search-form button:hover {
-  background-color: #ab2611;
+  background-color: var(--button-hover-bg-color);
 }
 
 .buttons button:last-of-type {
@@ -59,7 +59,7 @@ input[type="submit"] {
   padding: 10px 5px;
   font-size: 1.25em;
   text-align: center;
-  border: 1px solid #64666f;
+  border: 1px solid var(--border-color-dark);
   border-radius: 25px;
   transition: transform ease 1s;
 }
@@ -75,7 +75,7 @@ input[type="submit"] {
   left: 0;
   right: 0;
   font-size: 0.85em;
-  color: #d73a49;
+  color: var(--error-text-color);
 }
 
 @media all and (min-width: 500px) {

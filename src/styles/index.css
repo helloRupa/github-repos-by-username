@@ -1,6 +1,6 @@
 body {
   max-width: 850px;
-  color: #282c34;
+  color: var(--main-text-color);
   height: auto;
   margin: auto;
   position: relative;
@@ -25,7 +25,7 @@ header {
 h1 {
   font-weight: 600;
   font-size: 1.5em;
-  color: #3e3e63;
+  color: var(--logo-text-color);
 }
 
 h2 {
@@ -43,7 +43,7 @@ p {
 }
 
 a {
-  color: #0339d6;
+  color: var(--main-link-color);
   text-decoration: none;
 }
 

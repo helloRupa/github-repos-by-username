@@ -1,0 +1,16 @@
+:root {
+  --main-text-color: #282c34;
+  --logo-text-color: #3e3e63;
+  --main-link-color: #0339d6;
+  --border-color: #d0d0d0;
+  --border-color-dark: #64666f;
+  --shadow-color: #88888866;
+  --date-color: #464646;
+  --repo-heading-color: #282c34;
+  --button-text-color: #f6f8fa;
+  --button-bg-color: #ea852e;
+  --button-hover-bg-color: #ab2611;
+  --submit-text-color: #0366d6;
+  --submit-bg-color: #54228a;
+  --error-text-color: #d73a49;
+}
