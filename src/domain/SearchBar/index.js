@@ -1,5 +1,6 @@
 import { useRef, useState } from "react";
 import useTextError from "../../hooks/useTextError";
+import { isValidSearchTerm } from "../utils/input_validity";
 import * as constants from "../../constants/app";
 import Form from "../../components/Form";
 import Label from "../../components/Label";
@@ -9,32 +10,30 @@ import Buttons from "./Buttons";
 const searchInputId = "search-input";
 
 const SearchBar = (props) => {
-  const { setSearchTerm, searchTerm, getRepos } = props;
+  const { setSearchTerm, searchTerm } = props;
+  const [inputText, setInputText] = useState(searchTerm);
   const [showInputErrors, setShowInputErrors] = useState(false);
   const searchInput = useRef();
-  const regExp = new RegExp(constants.GITHUB_NAME_PATTERN);
-  const isValidInput = regExp.test(searchTerm);
   const textInputError = useTextError({
-    isInvalid: !isValidInput,
+    isInvalid: !isValidSearchTerm(inputText),
     element: searchInput.current,
     message: constants.SEARCH_VALIDITY_MESSAGE,
-    deps: [searchTerm],
+    deps: [inputText],
   });
 
   const handleChange = (e) => {
-    setSearchTerm(e.target.value);
+    setInputText(e.target.value);
     setShowInputErrors(true);
   };
 
   const clearInput = () => {
-    setSearchTerm("");
+    setInputText("");
     setShowInputErrors(false);
   };
 
   const handleSubmit = (e) => {
-    if (isValidInput) {
-      getRepos();
-      clearInput();
+    if (isValidSearchTerm(inputText)) {
+      setSearchTerm(inputText);
     }
   };
 
@@ -56,7 +55,7 @@ const SearchBar = (props) => {
       <TextInput
         placeholder="Enter GitHub username"
         onChange={handleChange}
-        value={searchTerm}
+        value={inputText}
         extraAttrs={extraAttrs}
       />
 

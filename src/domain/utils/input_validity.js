@@ -1,12 +1,7 @@
-export const clearInputValidityError = (ref) => {
-  ref.current.setCustomValidity("");
-};
+import { GITHUB_NAME_PATTERN } from "../../constants/app";
 
-export const setCustomValidityMessage = (ref, message) => {
-  ref.current.setCustomValidity(message);
-  ref.current.reportValidity();
-};
+export const isValidSearchTerm = (text) => {
+  const regExp = new RegExp(GITHUB_NAME_PATTERN);
 
-// export const setAriaInvalid = (element, isInvalid) => {
-//   element.setAttribute("aria-invalid", isInvalid);
-// };
+  return regExp.test(text);
+};

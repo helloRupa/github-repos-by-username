@@ -1,10 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { GET_MORE_REPOS } from "../utils/queries";
 import { APOLLO_REQUEST_CONFIG } from "../../constants/app";
+import { isValidSearchTerm } from "../utils/input_validity";
 import SearchBar from "../SearchBar";
 import Results from "../Results";
-import LoadMore from "../LoadMore";
+import Loading from "./Loading";
 
 /* TODO: ADD RESULTS, LOADING, AND ERROR */
 
@@ -17,21 +18,18 @@ const SearchPage = () => {
     }
   );
 
-  const getRepos = () => {
-    getUserRepos({ variables: { username: searchTerm } });
-  };
+  useEffect(() => {
+    if (isValidSearchTerm(searchTerm)) {
+      getUserRepos({ variables: { username: searchTerm } });
+    }
+  }, [searchTerm, getUserRepos]);
 
   return (
-    <>
-      <SearchBar
-        setSearchTerm={setSearchTerm}
-        searchTerm={searchTerm}
-        getRepos={getRepos}
-      />
-
+    <div aria-live="polite" aria-busy={loading}>
+      <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
+      {loading && <Loading />}
       {data && <Results data={data} />}
-      {data && <LoadMore data={data} handleClick={() => {}} />}
-    </>
+    </div>
   );
 };
 
