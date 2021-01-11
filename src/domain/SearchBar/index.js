@@ -1,5 +1,5 @@
 import { useRef, useState } from "react";
-import useTextError from "../../hooks/useTextError";
+import useInputTextError from "../../hooks/useInputTextError";
 import { isValidSearchTerm } from "../utils/input_validity";
 import * as constants from "../../constants/app";
 import Form from "../../components/Form";
@@ -14,7 +14,7 @@ const SearchBar = (props) => {
   const [inputText, setInputText] = useState(searchTerm);
   const [showInputErrors, setShowInputErrors] = useState(false);
   const searchInput = useRef();
-  const textInputError = useTextError({
+  const textInputError = useInputTextError({
     isInvalid: !isValidSearchTerm(inputText),
     element: searchInput.current,
     message: constants.SEARCH_VALIDITY_MESSAGE,

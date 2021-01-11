@@ -6,8 +6,7 @@ import { isValidSearchTerm } from "../utils/input_validity";
 import SearchBar from "../SearchBar";
 import Results from "../Results";
 import Loading from "./Loading";
-
-/* TODO: ADD RESULTS, LOADING, AND ERROR */
+import RequestError from "../RequestError";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
@@ -25,11 +24,12 @@ const SearchPage = () => {
   }, [searchTerm, getUserRepos]);
 
   return (
-    <div aria-live="polite" aria-busy={loading}>
+    <main aria-live="polite" aria-busy={loading}>
       <SearchBar setSearchTerm={setSearchTerm} searchTerm={searchTerm} />
-      {loading && <Loading />}
-      {data && <Results data={data} />}
-    </div>
+      {error && <RequestError errorData={error} />}
+      {loading && !data && <Loading />}
+      {data && !loading && <Results data={data} />}
+    </main>
   );
 };
 

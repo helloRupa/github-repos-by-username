@@ -2,7 +2,7 @@ import { useEffect } from "react";
 
 const TextError = ({ message }) => <div>{message}</div>;
 
-const useTextError = (props) => {
+const useInputTextError = (props) => {
   const { isInvalid, element, message, deps = [] } = props;
 
   useEffect(() => {
@@ -20,4 +20,4 @@ const useTextError = (props) => {
   return isInvalid ? <TextError message={message} /> : null;
 };
 
-export default useTextError;
+export default useInputTextError;
