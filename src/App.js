@@ -1,6 +1,5 @@
 import { ApolloProvider } from "@apollo/client";
 import client from "./domain/utils/apollo";
-import "./App.css";
 import { ErrorBoundary } from "react-error-boundary";
 import Header from "./domain/Header";
 import SearchPage from "./domain/SearchPage";

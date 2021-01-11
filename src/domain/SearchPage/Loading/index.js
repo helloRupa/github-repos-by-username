@@ -1,3 +1,4 @@
+import "./styles/index.css";
 import spinner from "../assets/spinner.gif";
 
 const Loading = () => {

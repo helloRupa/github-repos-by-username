@@ -1,4 +1,5 @@
 import { useRef, useState } from "react";
+import "./styles/index.css";
 import useInputTextError from "../../hooks/useInputTextError";
 import { isValidSearchTerm } from "../utils/input_validity";
 import * as constants from "../../constants/app";

@@ -78,74 +78,6 @@ input[type="submit"] {
   color: #d73a49;
 }
 
-.search-loading img {
-  margin: auto;
-  display: block;
-}
-
-section.search-results {
-  width: 95%;
-  margin: 15px auto;
-}
-
-.search-results h2 {
-  text-align: left;
-  margin: 5px 0;
-}
-
-.repo-number {
-  display: block;
-  padding: 5px 0;
-}
-
-.search-results ul {
-  width: 100%;
-}
-
-.search-results li {
-  margin: 15px auto;
-  padding: 5px;
-  border-bottom: 1px solid #d0d0d0;
-}
-
-.search-results li:hover {
-  box-shadow: -2px 3px 11px 0px #88888866;
-}
-
-.repo-heading {
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 10px;
-}
-
-.repo-heading h3 {
-  font-weight: bold;
-  font-size: 1.25em;
-}
-
-.repo-heading span {
-  font-size: 0.8em;
-  color: #464646;
-}
-
-.search-results h2 a {
-  color: #282c34;
-  text-decoration: underline;
-}
-
-.search-results h2 a:hover {
-  text-decoration: none;
-}
-
-.repo-date {
-  font-size: 0.8em;
-  color: #464646;
-}
-
-.repo-description {
-  padding: 15px 0;
-}
-
 @media all and (min-width: 500px) {
 
   .search-form input[type="submit"],
@@ -156,21 +88,5 @@ section.search-results {
 
   .buttons button:last-of-type {
     margin-left: 15px;
-  }
-}
-
-@media all and (min-width: 600px) {
-  .repo-heading {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  .repo-heading h3 {
-    max-width: 400px;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    white-space: nowrap;
   }
 }
