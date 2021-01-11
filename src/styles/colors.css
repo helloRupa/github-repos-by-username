@@ -1,4 +1,5 @@
 :root {
+  --app-bg-color: #ffffff;
   --main-text-color: #282c34;
   --logo-text-color: #3e3e63;
   --main-link-color: #0339d6;
@@ -13,4 +14,16 @@
   --submit-text-color: #0366d6;
   --submit-bg-color: #54228a;
   --error-text-color: #d73a49;
+}
+
+body.dark-theme {
+  --app-bg-color: #1d1e1f;
+  --logo-text-color: #d5d5dc;
+  --main-text-color: #dde2ec;
+  --border-color-dark: #a2a5b3;
+  --repo-heading-color: #eef3f7;
+  --main-link-color: #dde2ec;
+  --date-color: #fbf4be;
+  --shadow-color: #888888c7;
+  --error-text-color: #ffbcb0;
 }

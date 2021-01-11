@@ -1,0 +1,21 @@
+.dark-mode-switch {
+  position: absolute;
+  width: 130px;
+  text-align: center;
+  top: -10px;
+  right: 0;
+}
+
+.dark-mode-switch label {
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  font-size: 0.85em;
+}
+
+.dark-mode-switch img {
+  width: 55px;
+  height: auto;
+}

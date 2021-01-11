@@ -15,3 +15,5 @@ export const DATE_OPTIONS = {
   month: "numeric",
   day: "numeric",
 };
+
+export const THEME_NAMES = { light: "light-theme", dark: "dark-theme" };

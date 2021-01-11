@@ -56,6 +56,7 @@ input[type="submit"] {
 }
 
 .search-form input[type="text"] {
+  margin-bottom: 2em;
   padding: 10px 5px;
   font-size: 1.25em;
   text-align: center;
@@ -70,8 +71,9 @@ input[type="submit"] {
 
 .input-error {
   position: absolute;
+  width: 90%;
   margin: auto;
-  top: -2.5em;
+  bottom: 7.3em;
   left: 0;
   right: 0;
   font-size: 0.85em;
@@ -88,5 +90,9 @@ input[type="submit"] {
 
   .buttons button:last-of-type {
     margin-left: 15px;
+  }
+
+  .input-error {
+    bottom: 5.5em;
   }
 }
