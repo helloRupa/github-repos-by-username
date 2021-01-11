@@ -80,6 +80,14 @@ input[type="submit"] {
   color: var(--error-text-color);
 }
 
+.search-error {
+  padding: 10px;
+  color: var(--error-text-color);
+  width: 90%;
+  text-align: center;
+  margin: auto;
+}
+
 @media all and (min-width: 500px) {
 
   .search-form input[type="submit"],
