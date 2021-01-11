@@ -6,6 +6,8 @@ import lightOff from "./assets/lightOff.svg";
 import Button from "../Button";
 import Label from "../Label";
 
+const storageKey = "chosenTheme";
+
 const DarkModeSwitch = (props) => {
   const {
     classNames: { dark, light },
@@ -13,12 +15,24 @@ const DarkModeSwitch = (props) => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
+    const storedData = window.localStorage.getItem(storageKey);
+
+    if (storedData !== null && [dark, light].includes(storedData)) {
+      setIsDark(storedData === dark);
+    }
+  }, [dark, light]);
+
+  useEffect(() => {
+    const updateTheme = (removeClass, addClass) => {
+      document.body.classList.remove(removeClass);
+      document.body.classList.add(addClass);
+      window.localStorage.setItem(storageKey, addClass);
+    };
+
     if (isDark) {
-      document.body.classList.remove(light);
-      document.body.classList.add(dark);
+      updateTheme(light, dark);
     } else {
-      document.body.classList.remove(dark);
-      document.body.classList.add(light);
+      updateTheme(dark, light);
     }
   }, [dark, light, isDark]);
 
@@ -27,12 +41,11 @@ const DarkModeSwitch = (props) => {
   };
 
   const image = isDark ? lightOn : lightOff;
-  const onOrOff = isDark ? "On" : "Off";
   const toggleId = "dark-mode-toggle";
 
   return (
     <div className="dark-mode-switch">
-      <Label text={`Dark Mode is: ${onOrOff}`} forId={toggleId} />
+      <Label text={`Dark Mode: ${isDark ? "On" : "Off"}`} forId={toggleId} />
       <Button
         type="button"
         display={<img src={image} alt={`Click to turn Dark Mode ${!isDark}`} />}

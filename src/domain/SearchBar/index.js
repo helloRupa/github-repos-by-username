@@ -11,9 +11,10 @@ import Buttons from "./Buttons";
 const searchInputId = "search-input";
 
 const SearchBar = (props) => {
-  const { setSearchTerm, searchTerm } = props;
-  const [inputText, setInputText] = useState(searchTerm);
+  const { getRepos } = props;
+  const [inputText, setInputText] = useState("");
   const [showInputErrors, setShowInputErrors] = useState(false);
+
   const searchInput = useRef();
   const textInputError = useInputTextError({
     isInvalid: !isValidSearchTerm(inputText),
@@ -33,9 +34,7 @@ const SearchBar = (props) => {
   };
 
   const handleSubmit = (e) => {
-    if (isValidSearchTerm(inputText)) {
-      setSearchTerm(inputText);
-    }
+    getRepos(inputText);
   };
 
   const [minLength, maxLength] = constants.GITHUB_NAME_MIN_MAX_LENGTH;

@@ -1,4 +1,5 @@
-:root {
+:root,
+body.light-theme {
   --app-bg-color: #ffffff;
   --main-text-color: #282c34;
   --logo-text-color: #3e3e63;

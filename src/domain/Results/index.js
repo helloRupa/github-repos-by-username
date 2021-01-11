@@ -7,6 +7,10 @@ import SectionHeading from "./SectionHeading";
 const resultsSectionId = "section-heading";
 
 const Results = (props) => {
+  if (!props.data) {
+    return null;
+  }
+
   const {
     data,
     data: { repositoryOwner },

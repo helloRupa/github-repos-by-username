@@ -7,7 +7,7 @@ const RequestError = (props) => {
 
   return (
     <div className="search-error">
-      <span>Oops. Your request good could not go through.</span>
+      <span>Oops. Your request could could not go through.</span>
       <span>
         {errorType}: {message}
       </span>
