@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SearchBar from "../SearchBar";
 import Results from "../Results";
+import LoadMore from "../LoadMore";
 
 /* TODO: ADD RESULTS, LOADING, AND ERROR */
 
@@ -22,6 +23,7 @@ const SearchPage = () => {
       />
 
       {data && <Results data={response.data} />}
+      {data && <LoadMore data={response.data} handleClick={() => {}} />}
     </>
   );
 };

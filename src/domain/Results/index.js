@@ -11,8 +11,6 @@ const Results = (props) => {
     data: { repositoryOwner },
   } = props;
 
-  const showData = repositoryOwner && repositoryOwner.login;
-
   return (
     <Section ariaId={resultsSectionId}>
       <SectionHeading
@@ -20,8 +18,8 @@ const Results = (props) => {
         sectionId={resultsSectionId}
       />
 
-      {showData && <ReposFound data={repositoryOwner} />}
-      {showData && <RepoList data={data} />}
+      {repositoryOwner && <ReposFound data={repositoryOwner} />}
+      {repositoryOwner && <RepoList data={data} />}
     </Section>
   );
 };
