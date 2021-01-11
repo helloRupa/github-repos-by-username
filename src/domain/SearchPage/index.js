@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useLazyQuery } from "@apollo/client";
+import { GET_MORE_REPOS } from "../utils/queries";
+import { APOLLO_REQUEST_CONFIG } from "../../constants/app";
 import SearchBar from "../SearchBar";
 import Results from "../Results";
 import LoadMore from "../LoadMore";
@@ -7,23 +10,27 @@ import LoadMore from "../LoadMore";
 
 const SearchPage = () => {
   const [searchTerm, setSearchTerm] = useState("");
-  const [response, setResponse] = useState({
-    loading: false,
-    error: undefined,
-    data: undefined,
-  });
-  const { loading, error, data } = response;
+  const [getUserRepos, { error, data, loading }] = useLazyQuery(
+    GET_MORE_REPOS,
+    {
+      ...APOLLO_REQUEST_CONFIG,
+    }
+  );
+
+  const getRepos = () => {
+    getUserRepos({ variables: { username: searchTerm } });
+  };
 
   return (
     <>
       <SearchBar
         setSearchTerm={setSearchTerm}
         searchTerm={searchTerm}
-        setResponse={setResponse}
+        getRepos={getRepos}
       />
 
-      {data && <Results data={response.data} />}
-      {data && <LoadMore data={response.data} handleClick={() => {}} />}
+      {data && <Results data={data} />}
+      {data && <LoadMore data={data} handleClick={() => {}} />}
     </>
   );
 };

@@ -1,8 +1,6 @@
-import { useRef, useState, useEffect } from "react";
-import { useLazyQuery } from "@apollo/client";
+import { useRef, useState } from "react";
 import useTextError from "../../hooks/useTextError";
 import * as constants from "../../constants/app";
-import { GET_USER_REPOS } from "../utils/queries";
 import Form from "../../components/Form";
 import Label from "../../components/Label";
 import TextInput from "../../components/TextInput";
@@ -11,20 +9,9 @@ import Buttons from "./Buttons";
 const searchInputId = "search-input";
 
 const SearchBar = (props) => {
-  const { setSearchTerm, searchTerm, setResponse } = props;
+  const { setSearchTerm, searchTerm, getRepos } = props;
   const [showInputErrors, setShowInputErrors] = useState(false);
   const searchInput = useRef();
-  const [getUserRepos, { error, data, loading }] = useLazyQuery(
-    GET_USER_REPOS,
-    {
-      ...constants.APOLLO_REQUEST_CONFIG,
-    }
-  );
-
-  useEffect(() => {
-    setResponse({ error, data, loading });
-  }, [error, data, loading, setResponse]);
-
   const regExp = new RegExp(constants.GITHUB_NAME_PATTERN);
   const isValidInput = regExp.test(searchTerm);
   const textInputError = useTextError({
@@ -46,7 +33,7 @@ const SearchBar = (props) => {
 
   const handleSubmit = (e) => {
     if (isValidInput) {
-      getUserRepos({ variables: { username: searchTerm } });
+      getRepos();
       clearInput();
     }
   };
