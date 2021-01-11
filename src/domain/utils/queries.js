@@ -52,10 +52,10 @@ export const GET_USER_REPOS = gql`
 `;
 
 export const GET_MORE_REPOS = gql`
-  query getMoreRepos($username: String!, $endCursor: String!) {
+  query getMoreRepos($username: String!, $endCursor: String) {
     repositoryOwner(login: $username) {
       login
-      ...OwnerFields
+      ...UserFields
       ...OrgFields
       repositories(
         orderBy: { field: UPDATED_AT, direction: DESC }
