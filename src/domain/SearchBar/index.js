@@ -48,7 +48,11 @@ const SearchBar = (props) => {
   return (
     <Form
       handleSubmit={handleSubmit}
-      extraAttrs={{ role: "search", "aria-live": "polite" }}
+      extraAttrs={{
+        role: "search",
+        "aria-live": "polite",
+        className: "search-form",
+      }}
     >
       {showInputErrors && textInputError}
       <Label forId={searchInputId} text="Search for a User's Repos" />

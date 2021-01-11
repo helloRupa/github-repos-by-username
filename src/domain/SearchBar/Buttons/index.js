@@ -5,7 +5,7 @@ const Buttons = (props) => {
   const { handleClear } = props;
 
   return (
-    <div>
+    <div className="buttons">
       <SubmitButton display="Search" />
       <ClearButton onClick={handleClear} />
     </div>

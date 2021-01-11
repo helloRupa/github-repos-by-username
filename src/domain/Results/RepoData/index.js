@@ -2,9 +2,9 @@ const RepoData = (props) => {
   const { forkCount, stargazerCount } = props;
 
   return (
-    <div>
+    <span>
       {stargazerCount} Stars | {forkCount} Forks
-    </div>
+    </span>
   );
 };
 

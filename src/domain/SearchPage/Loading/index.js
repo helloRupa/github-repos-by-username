@@ -2,7 +2,7 @@ import spinner from "../assets/spinner.gif";
 
 const Loading = () => {
   return (
-    <div>
+    <div className="search-loading">
       <img src={spinner} alt="Fetching results" />
     </div>
   );

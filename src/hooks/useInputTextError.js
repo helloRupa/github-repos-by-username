@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 
-const TextError = ({ message }) => <div>{message}</div>;
+const TextError = ({ message }) => (
+  <span className="input-error">{message}</span>
+);
 
 const useInputTextError = (props) => {
   const { isInvalid, element, message, deps = [] } = props;

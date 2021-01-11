@@ -4,9 +4,9 @@ const RepoDateInfo = (props) => {
   const { createdAt, updatedAt } = props;
 
   return (
-    <div>
+    <span className="repo-date">
       Created: {makeDate(createdAt)}, Last updated: {makeDate(updatedAt)}
-    </div>
+    </span>
   );
 };
 

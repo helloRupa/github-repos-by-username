@@ -5,7 +5,7 @@ const ReposFound = (props) => {
     },
   } = props;
 
-  return <div>{totalCount} repos found</div>;
+  return <span className="repo-number">{totalCount} repos found</span>;
 };
 
 export default ReposFound;

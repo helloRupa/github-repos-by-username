@@ -12,7 +12,10 @@ const Results = (props) => {
   } = props;
 
   return (
-    <Section ariaId={resultsSectionId}>
+    <Section
+      ariaId={resultsSectionId}
+      extraAttrs={{ className: "search-results" }}
+    >
       <SectionHeading
         repositoryOwner={repositoryOwner}
         sectionId={resultsSectionId}

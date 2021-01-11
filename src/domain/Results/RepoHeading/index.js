@@ -6,7 +6,7 @@ const RepoHeading = (props) => {
   const { url, name, forkCount, stargazerCount } = props;
 
   return (
-    <div>
+    <div className="repo-heading">
       <Heading
         level={3}
         display={

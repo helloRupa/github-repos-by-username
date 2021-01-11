@@ -7,9 +7,9 @@ export const APOLLO_REQUEST_CONFIG = {
 };
 export const GITHUB_NAME_MIN_MAX_LENGTH = [1, 39];
 export const GITHUB_NAME_PATTERN = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
-export const SEARCH_VALIDITY_MESSAGE = `Name must be 1 to 39 characters: 
-  alphanumberic and/or hyphens. 
-  Cannot start or end with a hyphen and no double hyphens.`;
+export const SEARCH_VALIDITY_MESSAGE = `Up to 39 alphanumeric characters.
+Single hyphens OK between characters`;
+
 export const DATE_OPTIONS = {
   year: "numeric",
   month: "numeric",

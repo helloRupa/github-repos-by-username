@@ -1,38 +1,176 @@
-.App {
+form.search-form,
+.search-form label,
+.search-form input[type="text"],
+.search-form button,
+.search-form input[type="submit"] {
+  display: block;
+  margin: 15px auto;
+}
+
+form.search-form {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  margin: 45px auto;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.search-form label {
+  width: 100%;
+  font-size: 1.15em;
+  text-align: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.search-form input[type="text"],
+.search-form button,
+input[type="submit"] {
+  width: 95%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search-form input[type="submit"],
+.search-form button {
+  padding: 10px;
+  text-align: center;
+  color: #f6f8fa;
+  transition: background-color ease 1s;
+}
+
+.search-form input[type="submit"] {
+  background-color: #0366d6;
+}
+
+.search-form input[type="submit"]:hover {
+  background-color: #54228a;
+}
+
+.search-form button {
+  background-color: #ea852e;
+}
+
+.search-form button:hover {
+  background-color: #ab2611;
+}
+
+.buttons button:last-of-type {
+  margin-left: auto;
+}
+
+.search-form input[type="text"] {
+  padding: 10px 5px;
+  font-size: 1.25em;
+  text-align: center;
+  border: 1px solid #64666f;
+  border-radius: 25px;
+  transition: transform ease 1s;
+}
+
+.search-form input[type="text"]:focus {
+  transform: scale(1.1);
+}
+
+.input-error {
+  position: absolute;
+  margin: auto;
+  top: -2.5em;
+  left: 0;
+  right: 0;
+  font-size: 0.85em;
+  color: #d73a49;
+}
+
+.search-loading img {
+  margin: auto;
+  display: block;
+}
+
+section.search-results {
+  width: 95%;
+  margin: 15px auto;
+}
+
+.search-results h2 {
+  text-align: left;
+  margin: 5px 0;
+}
+
+.repo-number {
+  display: block;
+  padding: 5px 0;
+}
+
+.search-results ul {
+  width: 100%;
+}
+
+.search-results li {
+  margin: 15px auto;
+  padding: 5px;
+  border-bottom: 1px solid #d0d0d0;
+}
+
+.search-results li:hover {
+  box-shadow: -2px 3px 11px 0px #88888866;
+}
+
+.repo-heading {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  margin-bottom: 10px;
 }
 
-.App-link {
-  color: #61dafb;
+.repo-heading h3 {
+  font-weight: bold;
+  font-size: 1.25em;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.repo-heading span {
+  font-size: 0.8em;
+  color: #464646;
+}
+
+.search-results h2 a {
+  color: #282c34;
+  text-decoration: underline;
+}
+
+.search-results h2 a:hover {
+  text-decoration: none;
+}
+
+.repo-date {
+  font-size: 0.8em;
+  color: #464646;
+}
+
+.repo-description {
+  padding: 15px 0;
+}
+
+@media all and (min-width: 500px) {
+
+  .search-form input[type="submit"],
+  .search-form button {
+    display: inline-block;
+    width: 45%;
   }
-  to {
-    transform: rotate(360deg);
+
+  .buttons button:last-of-type {
+    margin-left: 15px;
+  }
+}
+
+@media all and (min-width: 600px) {
+  .repo-heading {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .repo-heading h3 {
+    max-width: 400px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
   }
 }
