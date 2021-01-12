@@ -51,4 +51,15 @@ const links = ApolloLink.from([
   httpLink,
 ]);
 
-export default apolloUtils.createApolloClient(links);
+const cache = {
+  typePolicies: {
+    Organization: {
+      keyFields: ["login"],
+    },
+    User: {
+      keyFields: ["login"],
+    },
+  },
+};
+
+export default apolloUtils.createApolloClient(links, cache);

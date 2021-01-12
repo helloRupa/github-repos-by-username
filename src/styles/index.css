@@ -3,6 +3,7 @@ body {
   max-width: 850px;
   height: auto;
   margin: auto;
+  padding-bottom: 60px;
   background-color: var(--app-bg-color);
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -51,4 +52,18 @@ a {
 
 a:hover {
   text-decoration: underline;
+}
+
+.load-more {
+  background-color: var(--submit-text-color);
+  padding: 15px 30px;
+  margin: 30px auto;
+  display: block;
+  font-weight: bold;
+  color: var(--button-text-color);
+  transition: background-color ease 1s;
+}
+
+.load-more:hover {
+  background-color: var(--submit-bg-color);
 }

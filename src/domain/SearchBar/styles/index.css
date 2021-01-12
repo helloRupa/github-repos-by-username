@@ -23,7 +23,7 @@ form.search-form {
 
 .search-form input[type="text"],
 .search-form button,
-input[type="submit"] {
+.search-form input[type="submit"] {
   width: 95%;
 }
 
@@ -33,6 +33,7 @@ input[type="submit"] {
   text-align: center;
   color: var(--button-text-color);
   transition: background-color ease 1s;
+  font-weight: 500;
 }
 
 .search-form input[type="submit"] {

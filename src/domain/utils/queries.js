@@ -35,22 +35,6 @@ const REPO_FRAGMENT = gql`
   }
 `;
 
-export const GET_USER_REPOS = gql`
-  query getUserRepos($username: String!) {
-    repositoryOwner(login: $username) {
-      login
-      ...UserFields
-      ...OrgFields
-      repositories(orderBy: { field: UPDATED_AT, direction: DESC }, first: 10) {
-        ...RepoFields
-      }
-    }
-  }
-  ${REPO_USER_FRAGMENT}
-  ${REPO_ORG_FRAGMENT}
-  ${REPO_FRAGMENT}
-`;
-
 export const GET_MORE_REPOS = gql`
   query getMoreRepos($username: String!, $endCursor: String) {
     repositoryOwner(login: $username) {

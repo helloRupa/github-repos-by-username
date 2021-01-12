@@ -2,10 +2,10 @@ import { ApolloClient, InMemoryCache, ApolloLink } from "@apollo/client";
 import { setContext } from "@apollo/client/link/context";
 import { onError } from "@apollo/client/link/error";
 
-export const createApolloClient = (links) =>
+export const createApolloClient = (links, cache) =>
   new ApolloClient({
     link: links,
-    cache: new InMemoryCache(),
+    cache: new InMemoryCache(cache),
   });
 
 export const authLink = (authHeaders = {}) =>
