@@ -74,6 +74,8 @@ The basic structure of the App is as follows (this is just a high-level view):
 
 In retrospect, it would have made more sense to put the SearchBar and RequestError in a component together within SearchPage, since they are coupled in functionality. Similarly, Results, Loading, and LoadMore should have been placed in a component together for the same reason with appropriate headings.
 
+There is so much refactoring I wish to do...
+
 ## Folder Structure
 
 I decided to break up my folders into the following structure:
