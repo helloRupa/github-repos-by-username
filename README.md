@@ -46,6 +46,8 @@ I used the Apollo Links to build a chain that could be adapted for use with a lo
 
 For loading additional repos, I ended up requesting the next 10 using cursor pagination and merging the new response with the data already received. I would have liked to have figured out how to do this using the Apollo cache and fetchMore function, but I ran out of time to continue exploring that. I think it would have made for a cleaner project.
 
+Lastly, I ensured users matching an organization or regular user were both accounted for.
+
 ### 2. Dark Mode should be implemented, preferably without the white flash
 
 I decided to use regular CSS for this requirement and a button that looks like a light bulb. When the button is clicked, it adds the “dark-theme” class to the body, which switches the color theme variables. Clicking it again switches to the “light-theme”, which is also the default theme. Every time the button is clicked, the theme is saved to local storage, and it’s retrieved when the app loads. To avoid the white flash, I set a background color on the body element in the public/index.html file above the body. This ensures that a middle-toned color loads first, so no white flash.
