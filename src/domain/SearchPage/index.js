@@ -1,3 +1,4 @@
+import "./styles/index.css";
 import { useState, useEffect } from "react";
 import { useLazyQuery } from "@apollo/client";
 import { GET_MORE_REPOS } from "../utils/queries";
