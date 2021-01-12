@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import RepoHeading from "../RepoHeading";
 import RepoDateInfo from "../RepoDateInfo";
 import RepoDescription from "../RepoDescription";
@@ -28,6 +29,10 @@ const RepoListItem = (props) => {
       <RepoDescription description={description} />
     </li>
   );
+};
+
+RepoListItem.propTypes = {
+  node: PropTypes.object,
 };
 
 export default RepoListItem;

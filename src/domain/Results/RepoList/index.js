@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import RepoListItem from "../RepoListItem";
 
 const RepoList = (props) => {
@@ -16,6 +17,10 @@ const RepoList = (props) => {
       ))}
     </ul>
   );
+};
+
+RepoList.propTypes = {
+  data: PropTypes.object,
 };
 
 export default RepoList;

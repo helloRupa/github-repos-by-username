@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const RequestError = (props) => {
   const {
     errorData: { message, graphQLErrors },
@@ -13,6 +15,10 @@ const RequestError = (props) => {
       </span>
     </div>
   );
+};
+
+RequestError.propTypes = {
+  errorData: PropTypes.object,
 };
 
 export default RequestError;

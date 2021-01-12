@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import SubmitButton from "../../../components/SubmitButton";
 import ClearButton from "../../../components/ClearButton";
 
@@ -10,6 +11,10 @@ const Buttons = (props) => {
       <ClearButton onClick={handleClear} />
     </div>
   );
+};
+
+Buttons.propTypes = {
+  handleClear: PropTypes.func,
 };
 
 export default Buttons;

@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const RepoData = (props) => {
   const { forkCount, stargazerCount } = props;
 
@@ -6,6 +8,11 @@ const RepoData = (props) => {
       {stargazerCount} Stars | {forkCount} Forks
     </span>
   );
+};
+
+RepoData.propTypes = {
+  forkCount: PropTypes.number,
+  stargazerCount: PropTypes.number,
 };
 
 export default RepoData;

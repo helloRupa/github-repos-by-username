@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 const ReposFound = (props) => {
   const {
     data: {
@@ -6,6 +8,10 @@ const ReposFound = (props) => {
   } = props;
 
   return <span className="repo-number">{totalCount} repos found</span>;
+};
+
+ReposFound.propTypes = {
+  data: PropTypes.object,
 };
 
 export default ReposFound;

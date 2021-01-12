@@ -1,19 +1,27 @@
 import "./styles/index.css";
+import PropTypes from "prop-types";
 import Button from "../../components/Button";
 
-const ErrorFallback = ({ error }) => {
+const ErrorFallback = (props) => {
+  const { error } = props;
   const handleClick = () => {
     window.location.reload();
   };
 
+  const message = error?.message || error;
+
   return (
     <div role="alert" className="major-error">
       <p>Something has gone horribly wrong:</p>
-      <pre>Error: {error}</pre>
+      <p>Error: {message}</p>
       <p>You might want to refresh the page or do something else.</p>
       <Button type="button" display="Refresh Page" onClick={handleClick} />
     </div>
   );
+};
+
+ErrorFallback.propTypes = {
+  error: PropTypes.oneOfType([PropTypes.string, PropTypes.instanceOf(Error)]),
 };
 
 export default ErrorFallback;

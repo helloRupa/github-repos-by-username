@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useRef, useState } from "react";
 import "./styles/index.css";
 import useInputTextError from "../../hooks/useInputTextError";
@@ -66,6 +67,10 @@ const SearchBar = (props) => {
       <Buttons handleClear={clearInput} />
     </Form>
   );
+};
+
+SearchBar.propTypes = {
+  getRepos: PropTypes.func,
 };
 
 export default SearchBar;

@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import Heading from "../../../components/Heading";
 import LinkNewTab from "../../../components/LinkNewTab";
 
@@ -31,6 +32,11 @@ const SectionHeading = (props) => {
       extraAttrs={{ id: sectionId }}
     />
   );
+};
+
+SectionHeading.propTypes = {
+  repositoryOwner: PropTypes.string,
+  sectionId: PropTypes.string,
 };
 
 export default SectionHeading;
