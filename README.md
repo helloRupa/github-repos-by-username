@@ -7,7 +7,7 @@ Type in a user’s name, click search and see a list of their up to their 10 mos
 ## Installation
 
 1. Clone down the repo
-2. `cd` into get-user-repos
+2. `cd` into github-repos-by-username/
 3. Run `npm i`
 4. Add a .env file at the root directory containing your GitHub PAT
 5. Run `npm start`
