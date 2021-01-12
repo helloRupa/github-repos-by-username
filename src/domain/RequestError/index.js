@@ -5,10 +5,11 @@ const RequestError = (props) => {
     errorData: { message, graphQLErrors },
   } = props;
 
-  const errorType = graphQLErrors ? "GraphQL" : "Network Error";
+  const errorType = graphQLErrors.length > 0 ? "GraphQL" : "Network Error";
 
   return (
     <div className="search-error">
+      <h2>Request Error</h2>
       <span>Oops. Your request could could not go through.</span>
       <span>
         {errorType}: {message}

@@ -71,7 +71,7 @@ const SearchPage = () => {
       <SearchBar getRepos={getRepos} />
       {error && <RequestError errorData={error} />}
       {results && <Results data={results} />}
-      {loading && <Loading />}
+      {!error && loading && <Loading />}
       {hasMore && <LoadMore handleClick={getMoreRepos} />}
     </main>
   );

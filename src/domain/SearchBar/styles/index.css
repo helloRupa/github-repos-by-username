@@ -18,6 +18,7 @@ form.search-form {
 .search-form label {
   width: 100%;
   font-size: 1.15em;
+  font-weight: 700;
   text-align: center;
 }
 
@@ -87,6 +88,10 @@ form.search-form {
   width: 90%;
   text-align: center;
   margin: auto;
+}
+
+.search-error span {
+  display: block;
 }
 
 @media all and (min-width: 500px) {

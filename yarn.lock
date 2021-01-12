@@ -2,7 +2,7 @@
 # yarn lockfile v1
 
 
-"@apollo/client@^3.0.0", "@apollo/client@^3.3.6":
+"@apollo/client@^3.0.0", "@apollo/client@^3.3.6", "@apollo/client@latest":
   "integrity" "sha512-XSm/STyNS8aHdDigLLACKNMHwI0qaQmEHWHtTP+jHe/E1wZRnn66VZMMgwKLy2V4uHISHfmiZ4KpUKDPeJAKqg=="
   "resolved" "https://registry.npmjs.org/@apollo/client/-/client-3.3.6.tgz"
   "version" "3.3.6"
@@ -20,6 +20,13 @@
     "ts-invariant" "^0.6.0"
     "tslib" "^1.10.0"
     "zen-observable" "^0.8.14"
+
+"@apollo/react-testing@^4.0.0":
+  "integrity" "sha512-P7Z/flUHpRRZYc3FkIqxZH9XD3FuP2Sgks1IXqGq2Zb7qI0aaTfVeRsLYmZNUcFOh2pTHxs0NXgPnH1VfYOpig=="
+  "resolved" "https://registry.npmjs.org/@apollo/react-testing/-/react-testing-4.0.0.tgz"
+  "version" "4.0.0"
+  dependencies:
+    "@apollo/client" "latest"
 
 "@babel/code-frame@^7.0.0", "@babel/code-frame@^7.10.4", "@babel/code-frame@^7.5.5", "@babel/code-frame@7.10.4":
   "integrity" "sha512-vG6SvB6oYEhvgisZNFRmRCUkLz11c7rp+tbNTynGqc6mS1d5ATd/sGyV6W0KZZnXRKMTzZDRgQT3Ou9jhpAfUg=="

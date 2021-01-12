@@ -4,6 +4,7 @@ import Button from "../../components/Button";
 
 const ErrorFallback = (props) => {
   const { error } = props;
+
   const handleClick = () => {
     window.location.reload();
   };
@@ -12,7 +13,7 @@ const ErrorFallback = (props) => {
 
   return (
     <div role="alert" className="major-error">
-      <p>Something has gone horribly wrong:</p>
+      <h2>Something has gone horribly wrong:</h2>
       <p>Error: {message}</p>
       <p>You might want to refresh the page or do something else.</p>
       <Button type="button" display="Refresh Page" onClick={handleClick} />
