@@ -7,8 +7,9 @@ Type in a user’s name, click search and see a list of their up to their 10 mos
 1. Clone down the repo
 2. `cd` into get-user-repos
 3. Run `npm i`
-4. Run `npm start`
-5. Search away!
+4. Add a .env file at the root directory containing your GitHub PAT
+5. Run `npm start`
+6. Search away!
 
 ## Dependencies
 
@@ -32,7 +33,7 @@ The Apollo client, Hooks, and Links make it easier to work with GraphQL in React
 
 ### GitHub Personal Access Token
 
-My PAT is in the .env in this project, and it’s required to run it, unless you make your own. I wouldn’t normally do this as it’s not a safe place for a PAT or any kind of API key.
+Place your PAT in a .env in this project's root. This can be created by going to GitHub Developer Settings.
 
 ## Requirements
 
