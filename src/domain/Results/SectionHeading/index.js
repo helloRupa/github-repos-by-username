@@ -35,7 +35,7 @@ const SectionHeading = (props) => {
 };
 
 SectionHeading.propTypes = {
-  repositoryOwner: PropTypes.string,
+  repositoryOwner: PropTypes.object,
   sectionId: PropTypes.string,
 };
 
