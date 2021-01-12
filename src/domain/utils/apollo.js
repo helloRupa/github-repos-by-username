@@ -4,7 +4,7 @@ import { GITHUB_ENDPOINT, REQUEST_TIMEOUT } from "../../constants/app";
 import ApolloLinkTimeout from "apollo-link-timeout";
 
 const httpLink = new HttpLink({ uri: GITHUB_ENDPOINT });
-const token = "d863f509a5a61e4a508e91771fafcc004f59cb14";
+const token = "8a09b348e3b4ca491ed941e09f105cb14d32e479";
 
 const authLink = apolloUtils.authLink({
   authorization: token ? `Bearer ${token}` : "",
