@@ -53,3 +53,14 @@ a {
 a:hover {
   text-decoration: underline;
 }
+
+.major-error {
+  text-align: center;
+  margin-top: 5em;
+}
+
+.major-error button {
+  margin-top: 2em;
+  text-decoration: underline;
+  padding: 10px;
+}

@@ -1,3 +1,24 @@
+/* LOAD STYLES */
+.search-loading img {
+  margin: auto;
+  display: block;
+}
+
+.load-more {
+  background-color: var(--submit-text-color);
+  padding: 15px 30px;
+  margin: 30px auto;
+  display: block;
+  font-weight: bold;
+  color: var(--button-text-color);
+  transition: background-color ease 1s;
+}
+
+.load-more:hover {
+  background-color: var(--submit-bg-color);
+}
+
+/* RESULTS HEADING, INFO, AND SECTION */
 section.search-results {
   width: 95%;
   margin: 15px auto;
@@ -8,11 +29,21 @@ section.search-results {
   margin: 5px 0;
 }
 
+.search-results h2 a {
+  color: var(--repo-heading-color);
+  text-decoration: underline;
+}
+
+.search-results h2 a:hover {
+  text-decoration: none;
+}
+
 .repo-number {
   display: block;
   padding: 5px 0;
 }
 
+/* RESULTS LIST */
 .search-results ul {
   width: 100%;
 }
@@ -27,6 +58,7 @@ section.search-results {
   box-shadow: -2px 3px 11px 0px var(--shadow-color);
 }
 
+/* LIST ITEM REPO STYLES */
 .repo-heading {
   display: flex;
   flex-direction: column;
@@ -36,15 +68,6 @@ section.search-results {
 .repo-heading h3 {
   font-weight: bold;
   font-size: 1.25em;
-}
-
-.search-results h2 a {
-  color: var(--repo-heading-color);
-  text-decoration: underline;
-}
-
-.search-results h2 a:hover {
-  text-decoration: none;
 }
 
 .repo-date {

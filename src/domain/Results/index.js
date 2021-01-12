@@ -1,4 +1,3 @@
-import "./styles/index.css";
 import Section from "../../components/Section";
 import RepoList from "./RepoList";
 import ReposFound from "./ReposFound";
