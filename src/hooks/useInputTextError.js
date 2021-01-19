@@ -5,7 +5,7 @@ const TextError = ({ message }) => (
 );
 
 const useInputTextError = (props) => {
-  const { isInvalid, element, message, deps = [] } = props;
+  const { isInvalid, element, message } = props;
 
   useEffect(() => {
     if (!element) {
@@ -13,7 +13,7 @@ const useInputTextError = (props) => {
     }
 
     element.setAttribute("aria-invalid", isInvalid);
-  }, [isInvalid, element, deps]);
+  }, [isInvalid, element]);
 
   return isInvalid ? <TextError message={message} /> : null;
 };

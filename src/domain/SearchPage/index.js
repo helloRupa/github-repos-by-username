@@ -72,7 +72,7 @@ const SearchPage = () => {
       {error && <RequestError errorData={error} />}
       {results && <Results data={results} />}
       {!error && loading && <Loading />}
-      {hasMore && <LoadMore handleClick={getMoreRepos} />}
+      {hasMore && !loading && <LoadMore handleClick={getMoreRepos} />}
     </main>
   );
 };

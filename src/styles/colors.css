@@ -1,30 +1,30 @@
 :root,
-body.light-theme {
-  --app-bg-color: #ffffff;
-  --main-text-color: #282c34;
-  --logo-text-color: #3e3e63;
-  --main-link-color: #0339d6;
-  --border-color: #d0d0d0;
-  --border-color-dark: #64666f;
-  --shadow-color: #88888866;
-  --date-color: #464646;
-  --repo-heading-color: #282c34;
-  --button-text-color: #ffffff;
-  --button-bg-color: #ea852e;
-  --button-hover-bg-color: #ab2611;
-  --submit-text-color: #0366d6;
-  --submit-bg-color: #54228a;
-  --error-text-color: #d73a49;
-}
-
 body.dark-theme {
   --app-bg-color: #1d1e1f;
   --logo-text-color: #d5d5dc;
   --main-text-color: #dde2ec;
+  --border-color: #d0d0d0;
   --border-color-dark: #a2a5b3;
+  --shadow-color: #88888866;
   --repo-heading-color: #eef3f7;
   --main-link-color: #dde2ec;
   --date-color: #fbf4be;
   --shadow-color: #888888c7;
   --error-text-color: #ffbcb0;
+  --button-bg-color: #ea852e;
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: #ab2611;
+  --submit-text-color: #0366d6;
+  --submit-bg-color: #54228a;
+}
+
+body.light-theme {
+  --app-bg-color: #ffffff;
+  --main-text-color: #282c34;
+  --logo-text-color: #3e3e63;
+  --main-link-color: #0339d6;
+  --border-color-dark: #64666f;
+  --date-color: #464646;
+  --repo-heading-color: #282c34;
+  --error-text-color: #d73a49;
 }

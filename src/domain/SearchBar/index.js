@@ -20,7 +20,6 @@ const SearchBar = (props) => {
     isInvalid: !isValidSearchTerm(inputText),
     element: searchInput.current,
     message: constants.SEARCH_VALIDITY_MESSAGE,
-    deps: [inputText],
   });
 
   const handleChange = (e) => {
