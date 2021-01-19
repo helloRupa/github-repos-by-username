@@ -1,11 +1,13 @@
 # Get User Repos
 
+[Go to website](https://zealous-wilson-07d4e3.netlify.app/)
+
 Type in a user’s name, click search and see a list of their up to their 10 most recently updated repos. If they have more repos, click Load More to view them 10 at a time in order from most recently to least recently updated.
 
 ## Installation
 
 1. Clone down the repo
-2. `cd` into get-user-repos
+2. `cd` into github-repos-by-username/
 3. Run `npm i`
 4. Add a .env file at the root directory containing your GitHub PAT
 5. Run `npm start`
