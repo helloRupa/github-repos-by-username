@@ -1,21 +1,23 @@
-:root,
+:root {
+  --app-bg-color: #333536;
+  --submit-text-color: #0366d6;
+  --submit-bg-color: #54228a;
+  --button-bg-color: #ea852e;
+  --button-text-color: #ffffff;
+  --button-hover-bg-color: #ab2611;
+  --border-color: #d0d0d0;
+}
+
 body.dark-theme {
   --app-bg-color: #1d1e1f;
   --logo-text-color: #d5d5dc;
   --main-text-color: #dde2ec;
-  --border-color: #d0d0d0;
   --border-color-dark: #a2a5b3;
-  --shadow-color: #88888866;
   --repo-heading-color: #eef3f7;
   --main-link-color: #dde2ec;
   --date-color: #fbf4be;
   --shadow-color: #888888c7;
   --error-text-color: #ffbcb0;
-  --button-bg-color: #ea852e;
-  --button-text-color: #ffffff;
-  --button-hover-bg-color: #ab2611;
-  --submit-text-color: #0366d6;
-  --submit-bg-color: #54228a;
 }
 
 body.light-theme {
@@ -27,4 +29,5 @@ body.light-theme {
   --date-color: #464646;
   --repo-heading-color: #282c34;
   --error-text-color: #d73a49;
+  --shadow-color: #88888866;
 }
