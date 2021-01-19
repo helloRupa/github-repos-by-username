@@ -51,13 +51,49 @@ const links = ApolloLink.from([
   httpLink,
 ]);
 
+const repoMergePolicy = {
+  keyArgs: false,
+  merge(existing, incoming) {
+    if (!existing) return incoming;
+    if (!incoming) return existing;
+
+    // We should return the incoming data if there are no repos
+    const firstNewRepoDate = incoming.nodes[0]?.createdAt;
+
+    // Check if cached data has nodes, edge case if user
+    // has no repos, then creates one after subsequent search
+    const existingRepos = existing.nodes || [];
+    const existingRepoDate = existingRepos.find(
+      (repo) => repo.createdAt === firstNewRepoDate
+    );
+
+    // When a user submits the same search, we return the first
+    // 10 results instead of all of the merged results stored in
+    // existing
+    if (firstNewRepoDate === undefined || existingRepoDate !== undefined) {
+      return incoming;
+    }
+
+    return {
+      ...incoming,
+      nodes: [...existing.nodes, ...incoming.nodes],
+    };
+  },
+};
+
 const cache = {
   typePolicies: {
     Organization: {
       keyFields: ["login"],
+      fields: {
+        repositories: repoMergePolicy,
+      },
     },
     User: {
       keyFields: ["login"],
+      fields: {
+        repositories: repoMergePolicy,
+      },
     },
   },
 };

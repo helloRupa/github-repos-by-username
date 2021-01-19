@@ -4,6 +4,7 @@ export const GITHUB_ENDPOINT = "https://api.github.com/graphql";
 export const APOLLO_REQUEST_CONFIG = {
   errorPolicy: "all",
   fetchPolicy: "cache-and-network",
+  notifyOnNetworkStatusChange: true,
 };
 export const GITHUB_NAME_MIN_MAX_LENGTH = [1, 39];
 export const GITHUB_NAME_PATTERN = /^[a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38}$/i;
